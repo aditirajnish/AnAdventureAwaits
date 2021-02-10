@@ -1,14 +1,16 @@
 
 # This game was coded by me, Aditi Rajnish!
 # Me and Thu Mai collaborated on the storyline and graphics.
-# Our game is a combination of a few different genres: choose your own adventure,
-# puzzles/challenges, action, and story telling.
+# Our game is a combination of a few different genres: choose your own adventure, puzzles/challenges, action, and story telling.
+# I have commented out all pygame.mixer lines of code since repl.it does not support sounds.
+# This game was developed with an earlier version of Pygame (1.9.6) so running the game in this repl causes some parts of the game to glitch out--most notably, the Dragon Escape minigame. 
+# The game window on repl.it does not resize properly, so some components may be blocked off.
 
 import pygame
 import random
 
 pygame.init()
-pygame.mixer.init()
+# pygame.mixer.init()
 
 displayWidth = 1024
 displayHeight = 768
@@ -53,8 +55,9 @@ dragonHeight = 60
 dragonSpeed = 0
 
 def adventure_music():
-    pygame.mixer.music.load('sounds/adventure.mp3')
-    pygame.mixer.music.play(-1)
+    # pygame.mixer.music.load('sounds/adventure.mp3')
+    # pygame.mixer.music.play(-1)
+    pass
 
 def objects(objectx, objecty, objectw, objecth, color):
     pygame.draw.rect(gameDisplay, color, [objectx, objecty, objectw, objecth])
@@ -80,8 +83,8 @@ def button(msg,x,y,w,h,ic,ac,action=None):
     if x+w > mouse[0] > x and y+h > mouse[1] > y:
         pygame.draw.rect(gameDisplay, ac,(x,y,w,h))
         if click[0] == 1 and action != None:
-            pygame.mixer.music.load('sounds/click.wav')
-            pygame.mixer.music.play(0)
+            # pygame.mixer.music.load('sounds/click.wav')
+            # pygame.mixer.music.play(0)
             action()
     else:
         pygame.draw.rect(gameDisplay, ic,(x,y,w,h))
@@ -109,8 +112,8 @@ def instructions():
 
 
 def die():
-    pygame.mixer.music.load('sounds/sad_trombone.wav')
-    pygame.mixer.music.play(0)
+    # pygame.mixer.music.load('sounds/sad_trombone.wav')
+    # pygame.mixer.music.play(0)
 
     gameDisplay.fill(white)
 
@@ -726,24 +729,24 @@ def prompt28():
                     sound5 = True
 
         if sound1 == True:
-            pygame.mixer.music.load('sounds/MiddleC.wav')
-            pygame.mixer.music.play(0)
+            # pygame.mixer.music.load('sounds/MiddleC.wav')
+            # pygame.mixer.music.play(0)
             sound1 = False
         if sound2 == True:
-            pygame.mixer.music.load('sounds/TrebleD.wav')
-            pygame.mixer.music.play(0)
+            # pygame.mixer.music.load('sounds/TrebleD.wav')
+            # pygame.mixer.music.play(0)
             sound2 = False
         if sound3 == True:
-            pygame.mixer.music.load('sounds/TrebleE.wav')
-            pygame.mixer.music.play(0)
+            # pygame.mixer.music.load('sounds/TrebleE.wav')
+            # pygame.mixer.music.play(0)
             sound3 = False
         if sound4 == True:
-            pygame.mixer.music.load('sounds/TrebleF.wav')
-            pygame.mixer.music.play(0)
+            # pygame.mixer.music.load('sounds/TrebleF.wav')
+            # pygame.mixer.music.play(0)
             sound4 = False
         if sound5 == True:
-            pygame.mixer.music.load('sounds/TrebleG.wav')
-            pygame.mixer.music.play(0)
+            # pygame.mixer.music.load('sounds/TrebleG.wav')
+            # pygame.mixer.music.play(0)
             sound5 = False
 
         if 'c' in notes:
@@ -769,8 +772,8 @@ def prompt28():
 
 def prompt30():
 
-    pygame.mixer.music.load('sounds/intruder.wav')
-    pygame.mixer.music.play(0)
+    # pygame.mixer.music.load('sounds/intruder.wav')
+    # pygame.mixer.music.play(0)
 
     while True:
         for event in pygame.event.get():
@@ -788,8 +791,8 @@ def prompt30():
 
 def prompt31a():
 
-    pygame.mixer.music.load('sounds/intruder.wav')
-    pygame.mixer.music.play(0)
+    # pygame.mixer.music.load('sounds/intruder.wav')
+    # pygame.mixer.music.play(0)
 
     while True:
         for event in pygame.event.get():
@@ -807,8 +810,8 @@ def prompt31a():
 
 def prompt31b():
 
-    pygame.mixer.music.load('sounds/escape.mp3')
-    pygame.mixer.music.play(-1)
+    # pygame.mixer.music.load('sounds/escape.mp3')
+    # pygame.mixer.music.play(-1)
 
     while True:
         for event in pygame.event.get():
@@ -825,8 +828,8 @@ def prompt31b():
         clock.tick(15)
 
 def prompt32():
-    pygame.mixer.music.load('sounds/escape.mp3')
-    pygame.mixer.music.play(-1)
+    # pygame.mixer.music.load('sounds/escape.mp3')
+    # pygame.mixer.music.play(-1)
 
     x = (displayWidth * 0.75)
     y = (displayHeight * 0.5)
